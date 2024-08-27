@@ -1,5 +1,5 @@
 import React from "react";
-import {  MantineProvider, Container, Select } from "@mantine/core";
+import {  MantineProvider, Container } from "@mantine/core";
 import "@mantine/core/styles.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import TodoPage from "./pages/todo";
