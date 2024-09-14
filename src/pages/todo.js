@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useQuery } from "@tanstack/react-query";
 import { Center, LoadingOverlay, Pagination, Select, Table } from '@mantine/core';
 import { getTodo } from '../utiles/Api';
+import { Link } from 'react-router-dom';
 
 
 function TodoPage() {
@@ -14,6 +15,7 @@ function TodoPage() {
     
   return (
     <div>
+      <Link to={"/todo"}>go back to todo</Link>
        <Select
         label="per page"
         placeholder="10"
