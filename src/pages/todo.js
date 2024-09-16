@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Center, LoadingOverlay, Pagination, Select, Table } from '@mantine/core';
 import { getTodo } from '../utiles/Api';
 import { Link } from 'react-router-dom';
+import {  IconCheck, IconX } from '@tabler/icons-react';
 
 
 function TodoPage() {
@@ -28,7 +29,7 @@ function TodoPage() {
         <Table.Tr>
           <Table.Th>ID</Table.Th>
           <Table.Th>Tittle</Table.Th>
-          <Table.Th>completed</Table.Th>
+          <Table.Th>Action</Table.Th>
         </Table.Tr>
       </Table.Thead>
         <Table.Tbody>
@@ -38,7 +39,9 @@ function TodoPage() {
               <Table.Tr key={value.id}>
                 <Table.Td>{value.id}</Table.Td>
                 <Table.Td>{value.title}</Table.Td>
-                <Table.Td>{value.completed ? 'completed' : 'in completed'}</Table.Td>
+                <Table.Td>
+                  <Link to={`/post/${value.id}`}>More</Link>
+                </Table.Td>
               </Table.Tr>
             )
           })
