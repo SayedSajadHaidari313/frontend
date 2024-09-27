@@ -3,10 +3,9 @@ import { useQuery } from "@tanstack/react-query";
 import { Center, LoadingOverlay, Pagination, Select, Table } from '@mantine/core';
 import { getTodo } from '../utiles/Api';
 import { Link } from 'react-router-dom';
-import {  IconCheck, IconX } from '@tabler/icons-react';
 
 
-function TodoPage() {
+function PostsPage() {
   const [ page , setPage] = useState(1)
   const [limit , setLimit] = useState(10)
   const {data , isLoading, isError} = useQuery({ queryKey : ['fetch-todo', page, limit], 
@@ -55,4 +54,4 @@ function TodoPage() {
   )
 }
 
-export default TodoPage
+export default PostsPage
