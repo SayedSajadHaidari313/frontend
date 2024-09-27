@@ -5,7 +5,7 @@ import { getTodo } from '../utiles/Api';
 import { Link } from 'react-router-dom';
 
 
-function TodoPage() {
+function PostsPage() {
   const [ page , setPage] = useState(1)
   const [limit , setLimit] = useState(10)
   const {data , isLoading, isError} = useQuery({ queryKey : ['fetch-todo', page, limit], 
@@ -28,7 +28,7 @@ function TodoPage() {
         <Table.Tr>
           <Table.Th>ID</Table.Th>
           <Table.Th>Tittle</Table.Th>
-          <Table.Th>completed</Table.Th>
+          <Table.Th>Action</Table.Th>
         </Table.Tr>
       </Table.Thead>
         <Table.Tbody>
@@ -38,7 +38,9 @@ function TodoPage() {
               <Table.Tr key={value.id}>
                 <Table.Td>{value.id}</Table.Td>
                 <Table.Td>{value.title}</Table.Td>
-                <Table.Td>{value.completed ? 'completed' : 'in completed'}</Table.Td>
+                <Table.Td>
+                  <Link to={`/post/${value.id}`}>More</Link>
+                </Table.Td>
               </Table.Tr>
             )
           })
@@ -52,4 +54,4 @@ function TodoPage() {
   )
 }
 
-export default TodoPage
+export default PostsPage
